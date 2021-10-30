@@ -1,0 +1,64 @@
+{% include 'header.html' %}
+    
+</br>
+<a href="{{url_for('CrearEmpleado')}}" class="btn-success">
+    
+    Ingresar Nuevo Empleado
+
+</a>
+<br>
+<br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Foto</th>
+                <th>cedula</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Direccion</th>
+                <th>telefono</th>
+                <th>Fechaingreso</th>
+                <th>Fechaterminacion</th>
+                <th>Salario</th>
+                <th>Password</th>
+                <th>Cargo</th>
+                <th>Perfil</th>
+                <th>Dependencia</th>
+                <th>Tipocontrato</th>
+                <th>Retroalimentacion</th>
+                <th>Puntuacion</th>
+                <th>Editar - Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuarios in usuarios %}
+            <tr>
+                <td>
+                <img class="img-thumbnail" width="100" src="/uploads/{{usuarios[16]}}" alt="">
+                </td>
+                <td>{{usuarios[0]}}</td>
+                <td>{{usuarios[1]}}</td>
+                <td>{{usuarios[2]}}</td>
+                <td>{{usuarios[3]}}</td>
+                <td>{{usuarios[4]}}</td>
+                <td>{{usuarios[5]}}</td>
+                <td>{{usuarios[6]}}</td>
+                <td>{{usuarios[7]}}</td>
+                <td>{{usuarios[8]}}</td>
+                <td>{{usuarios[9]}}</td>
+                <td>{{usuarios[10]}}</td> 
+                <td>{{usuarios[11]}}</td>
+                <td>{{usuarios[12]}}</td>
+                <td>{{usuarios[13]}}</td>
+                <td>{{usuarios[14]}}</td>
+                <td>{{usuarios[15]}}</td>
+                <td><a  class="btn btn-warning" href="/editar/{{usuarios[0]}}">Edit</a>||<a onclick="return confirm('¿De borrar al usuario?')" class="btn btn-danger" href="/delete/{{usuarios[0]}}">Delete</a></td>
+            </tr>
+                    
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% include 'footer.html' %}

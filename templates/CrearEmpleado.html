@@ -1,0 +1,46 @@
+
+{% include 'header.html' %}
+{% with messages = get_flashed_messages()%}
+
+{% if messages %}
+    <div class="alert alert-danger" role="alert">
+    {% for message in messages  %}
+        {{message}}  
+    {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+
+
+<br><br>
+<form method="post" action="/CrearEmpleado" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            Registro de usuarios
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del Empleado</h5>
+            <p class="card-text">
+            <div class="form-group">{{form.id.label}}:<br>{{form.id}}</div>
+            <div class="form-group">{{form.nombre.label}}:<br>{{form.nombre}}</div>
+            <div class="form-group">{{form.apellidos.label}}:<br>{{form.apellidos}}</div>
+            <div class="form-group">{{form.correo.label}}:<br>{{form.correo}}</div>
+            <div class="form-group">{{form.direccion.label}}:<br>{{form.direccion}}</div>
+            <div class="form-group">{{form.telefono.label}}:<br>{{form.telefono}}</div>
+            <div class="form-group">{{form.fechaingreso.label}}:<br>{{form.fechaingreso}} </div>
+            <div class="form-group">{{form.fechaterminacion.label}}:<br>{{form.fechaterminacion}}</div>
+            <div class="form-group">{{form.tipocontrato.label}}:<br>{{form.tipocontrato}}</div>
+            <div class="form-group">{{form.cargo.label}}:<br>{{form.cargo}}</div>
+            <div class="form-group">{{form.dependencia.label}}:<br>{{form.dependencia}}</div>
+            <div class="form-group">{{form.perfil.label}}:<br>{{form.perfil}}</div>
+            <div class="form-group">{{form.salario.label}}:<br>{{form.salario}}</div>
+            <div class="form-group">{{form.password.label}}:<br>{{form.password}}</div>
+            <div class="form-group">{{form.foto.label}}:<br>{{form.foto}}</div>
+            <div class="form-group">{{form.gsubmit(class="btn btn-success" )}}
+                <a href="{{url_for('retornar')}}" class="btn btn-primary" >Regresar</a>
+            </div>
+            </p>
+        </div>
+
+</form>
+{% include 'footer.html' %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <title>Inicio de Sesión</title>
+</head>
+
+<style>
+    body{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url(https://fondosmil.com/fondo/39906.jpg); 
+        background-size: cover;
+        background-position: center left;  
+        }
+   div, h1{ margin-top: 1px;
+        margin-bottom: 1px;
+        text-align: center ; 
+        background-position: center left;  
+        color: lightgray; 
+       
+        }
+    form{
+        margin: 5% 10% 5% 10% ;
+        padding: 0.5% 10% 10% 10%;
+        text-align: center right;  
+        background-position: center left;  
+    }
+
+    input{
+        border-radius: 0%;
+        border: 0;
+        padding: 1% 2% 1% 2%;
+        background-position: center left;
+        background-color: rgba(17, 161, 29, 0.5); 
+        color: lightgray; 
+
+    }
+
+</style>
+</html>
+
+{% block content %}
+
+<h1> PORTAL EMPLEADO</h1>
+<p align="center">
+    <img src="https://cdn.pixabay.com/photo/2019/08/19/19/04/people-4417185_960_720.png" alt="" width="140mpx">
+</p>
+
+<form action="" method="post">
+    <div class="form-group">
+
+
+    {{form.usuario.label}}
+    <span class="icon is-small is-left">
+    <i class="fas fa-user"></i>
+    </span>
+    {{form.usuario}}
+
+    </div>
+<br>
+
+    <div class="form-group">
+       {{form.password.label}}
+       <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+       {{form.password}}
+    </div>
+
+    <br>
+    <div>
+        {{form.perfil.label}}
+        {{form.perfil}}
+    </div>
+    <br>
+    <div>
+    <input type="submit" value="iniciar sesion" title="iniciar sesion" class="btn btn-primary"> 
+    </div>
+
+</form>
+
+{% endblock  %}

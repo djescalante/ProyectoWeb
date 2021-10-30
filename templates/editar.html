@@ -1,0 +1,103 @@
+{% include 'header.html' %}
+<br><br>
+    <form method="post" action="/update" enctype="multipart/form-data">
+        <div class="card">
+          <div class="card-header">
+            Editar Empleado
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Datos del empleado</h5>
+            <p class="card-text">
+            </div>
+            <div class="form-group">
+              Cedula: 
+              <input type="text" name="id" value="{{editado[0]}}" id="id">
+            </div>
+            <div class="form-group">
+              Nombre: 
+              <input type="text" name="nombre" value="{{editado[1]}}" id="nombre">
+            </div>
+            <div class="form-group">
+              Apellido: 
+              <input type="text" name="apellidos" value="{{editado[2]}}" id="apellidos">
+            </div>
+            <div class="form-group">
+              Correo: 
+              <input type="text" name="correo" value="{{editado[3]}}" id="correo">
+            </div>
+            <div class="form-group">
+              Direccion: 
+              <input type="text" name="direccion" value="{{editado[4]}}" id="direccion">
+            </div>
+            <div class="form-group">
+              Celular: 
+              <input type="text" name="celular" value="{{editado[5]}}" id="celular">
+            </div>
+            <div class="form-group">
+              Fecha Ingreso: 
+              <input type="text" name="fecha_ingreso" value="{{editado[6]}}" id="fecha_ingresola">
+            </div>
+            <div class="form-group">
+              Fecha Termino: 
+              <input type="text" name="fecha_termino" value="{{editado[7]}}" id="fecha_termino">
+            </div>
+            <div class="form-group">
+              Salario: 
+              <input type="text" name="salario" value="{{editado[8]}}" id="salario">
+            </div>
+            <div class="form-group">
+              Password: 
+              <input type="text" name="password" value="{{editado[9]}}" id="password">
+            </div>
+            <div class="form-group">
+              El cargo Actual es: {{editado[10]}}<br>
+              <select name="cargo">
+                <option value="1">Gerente</option>
+                <option value="2" selected>Analista</option>
+                <option value="3">Profesional</option>
+              </select>
+            </div>
+            <div class="form-group">
+              La dependencia actual es: {{editado[11]}}<br>
+              <select name="dependencia">
+                <option value="1">Contabilidad</option>
+                <option value="2" selected>Administrativo</option>
+                <option value="3">Comercial</option>
+              </select>
+            </div>
+            <div class="form-group">
+              El tipo de contrato actual es: {{editado[12]}}<br>
+              <select name="contrato">
+                <option value="1">Termino Fijo</option>
+                <option value="2" selected>Indefinido</option>
+                <option value="3">Prestacion de Servicios</option>
+                <option value="4">Obra Labor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              Retroalimentacion: 
+              <input type="text" name="retroalimentacion" value="{{editado[13]}}" id="retroalimentacion">
+            </div>
+            <div class="form-group">
+              Puntuacion: 
+              <input type="text" name="puntuacion" value="{{editado[14]}}" id="puntuacion">              
+            </div>
+            <div class="form-group">
+              Foto: 
+              <br><img class="img-thumbnail" width="100" src="{{ url_for('uploads',nombreFoto=editado[15])}}" alt="">              
+            </div>
+            <div class="form-group">
+              <input type="file" name="foto" value="{{editado[15]}}" id="foto">              
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-success" value="Modificar">
+              <a href="{{url_for('retornar')}}" class="btn btn-primary" >Regresar</a>                     
+            </div>
+    
+        </form>
+
+
+            </p>
+          </div>
+
+    {% include 'footer.html' %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" >
+    <title>retroalimentación</title>
+</head>
+
+
+<body>
+   
+    <h1 style="text-align: center;";>Retroalimentación empleado</h1>
+    <br><br>
+    <div>
+    <textarea name="retroalimentacion" id="retroalimentacion" rows="20" cols="80"> </textarea>
+     
+</div>
+    <textarea name="calificación" id="calificacion" cols="10" rows="2" placeholder="puntaje....."></textarea>
+    <br>
+    <center>
+    <button onclick="guardar()" class="button">Guardar</button>
+        <script>
+        function guardar() {
+        alert("Guardado con éxito");
+        }
+        </script>
+        <button onclick="cancelar()" class="button">Cancelar</button>
+        <script>
+        function cancelar() {
+        alert("esta seguro que desea cancelar");
+        }
+        </script>
+
+    <button class="button"> <b><a href="administrador">Volver al inicio</a></b></button>
+       
+    </center>   
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Inicio</title>
+    <style>
+        .container {
+            margin: 15px;
+          }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand">BIENVENIDO AL PORTAL EMPLEADO</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto" style="text-align: right;">
+               
+               <button style="text-align: right;">
+                <a class="nav-link" href="{{ url_for('logout') }}" tabindex="-1" aria-disabled="true" style="background-position: right">Cerrar Sesion</a>
+               </button>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div margin-left= 0 class="container">
+
+  
+{% block contenido  %}
+
+<form action="{{ url_for('empleado') }}" method="post">
+
+
+<center><h1>Información Personal</h1></center>
+    
+<table class="table table-light">
+        <thead class="thead-light">
+        <tr>
+            <th>Identificación</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            <th>Celular</th>
+         </tr>
+        
+
+
+        {% for row in rows %}
+
+        <tr>
+            <td>{{row["id_cedula"]}}</td>
+            <td>{{row["nombre"]}}</td>
+            <td>{{row["apellido"]}}</td>
+            <td>{{row["direccion"]}}</td>
+            <td>{{row["correo"]}}</td>
+            <td>{{row["celular"]}}</td>
+
+        </tr>
+        {% endfor %}   
+        
+    </thead>
+        </table>
+       
+
+
+</form>
+
+<form action="{{ url_for('empleado') }}" method="post">
+
+    <center><h1>Información Laboral</h1></center>
+    <center>
+
+    <table class="table table-light">
+            <thead class="thead-light">
+            <tr>
+                <th>Salario</th>
+                <th>Cargo</th>
+                <th>Dependencia</th>
+                <th>Tipo de contrato</th>
+                <th>Fecha de ingreso</th>
+                <th>Fecha de Terminación</th>
+    
+            </tr>
+        <tr>
+        {% for row in rows %}
+        
+        <td>{{row["salario"]}}</td>
+        <td>{{row["nombre_cargo"]}}</td>
+        <td>{{row["nombre_dependencia"]}}</td>
+        <td>{{row["nombre_tipo_contrato"]}}</td>
+        <td>{{row["fecha_ingreso"]}}</td>
+        <td>{{row["fecha_termino"]}}</td>
+    
+    </tr>
+    </thead>
+    </table>
+        {% endfor %} 
+
+
+        <table class="table table-light">
+            <thead class="thead-light">
+            <tr>
+                <th>Retroalimentación</th>
+                <th>Puntaje</th>
+             </tr>
+                
+            {% for row in rows %}
+    
+            <tr>
+                <td>{{row["retroalimentacion"]}}</td>
+                <td>{{row["puntuacion"]}}</td>
+    
+            </tr>
+            {% endfor %}   
+            
+        </thead>
+            </table>
+
+        
+    
+  
+</form>
+
+
+
+{% endblock  %}
+
